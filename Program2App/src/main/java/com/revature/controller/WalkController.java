@@ -14,28 +14,28 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins="*")
 public class WalkController {
 		
-		private UserServiceImpl userService;
-		
-		@Autowired
-		public void setUserService(UserServiceImpl userService) {
-			this.userService = userService;
-		}
-		
-		@GetMapping
-		public List<User> getAllUsers() {
-			return userService.getAllUsers();
-		}
-		
-		@GetMapping("/user/{username}")
-		public User getUserByUsername(@PathVariable String username) {
-			return userService.getUserByUsername(username);
-			
-		}
-		
-		@PostMapping(consumes = "application/json")
-		public String makeUser(@RequestBody User user) {
-			userService.registerUser(user);
-			return "success";
-		}
-	}
+//		private UserServiceImpl userService;
+//		
+//		@Autowired
+//		public void setUserService(UserServiceImpl userService) {
+//			this.userService = userService;
+//		}
+//		
+//		@GetMapping
+//		public List<User> getAllUsers() {
+//			return userService.getAllUsers();
+//		}
+//		
+//		@GetMapping("/user/{username}")
+//		public User getUserByUsername(@PathVariable String username) {
+//			return userService.getUserByUsername(username);
+//			
+//		}
+//		
+//		@PostMapping(consumes = "application/json")
+//		public String makeUser(@RequestBody User user) {
+//			userService.registerUser(user);
+//			return "success";
+//		}
+//	}
 }

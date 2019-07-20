@@ -9,6 +9,7 @@ import org.hibernate.SessionFactory;
 import com.revature.beans.Profile;
 import com.revature.util.SessionFactoryUtil;
 
+@Component
 public class ProfileDaoImpl implements ProfileDao {
 
 	SessionFactory sf = SessionFactoryUtil.getSessionFactory();
@@ -17,16 +18,17 @@ public class ProfileDaoImpl implements ProfileDao {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void insertProfile(Profile p) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
-	public Profile getProfileById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Profile getProfileByUserId(int userId) {
+		Session session = sf.openSession();
+		//This User is the class/object -----NOT TABLE-------
+			String hql = "FROM Profile WHERE userId = :id";
+			Query query = session.createQuery(hql);//, User.class);
+			query.setParameter("id", userId);
+			Profile profile = (Profile) query.getSingleResult();
+		session.close();
+		return profile;
 	}
 
 	@Override
@@ -42,13 +44,20 @@ public class ProfileDaoImpl implements ProfileDao {
 	@Override
 	public void updateProfile(Profile p) {
 		// TODO Auto-generated method stub
-
 	}
-
 	@Override
 	public void deleteProfile(Profile p) {
 		// TODO Auto-generated method stub
+	}
 
+	@Override
+	public void saveProfile(Profile profile) {
+		Session session = sf.openSession();
+		Transaction transaction = session.beginTransaction();
+		session.save(profile);
+		transaction.commit();
+		sf.close();
+		
 	}
 
 }
