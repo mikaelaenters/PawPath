@@ -1,11 +1,10 @@
 package com.revature.util;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 import org.springframework.stereotype.Component;
 
+import com.revature.beans.Profile;
 import com.revature.beans.User;
 
 @Component
@@ -30,9 +29,7 @@ public class SessionFactoryUtil {
 //		
 //		sf = configuration.buildSessionFactory(serviceRegistry);
 		
-		sf = configuration.configure("hibernate.cfg.xml").addAnnotatedClass(User.class)
-				
-				.buildSessionFactory();
+		sf = configuration.configure("hibernate.cfg.xml").addAnnotatedClass(User.class).addAnnotatedClass(Profile.class).buildSessionFactory();
 	
 	}
 	

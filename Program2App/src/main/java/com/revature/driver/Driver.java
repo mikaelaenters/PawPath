@@ -18,7 +18,7 @@ public class Driver {
 		Session sess = sf.openSession();
 		Transaction t = sess.beginTransaction();	
 //		User user = new User(1, "mikaelaenters", "hello", "contractor", "Mikaela Enters");
-		System.out.println(user);
+//		System.out.println(user);
 //		sess.save(user);
 		t.commit();
 		sess.close();

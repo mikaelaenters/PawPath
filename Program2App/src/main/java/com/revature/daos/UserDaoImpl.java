@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao {
 		//This User is the class/object -----NOT TABLE-------
 			String hql = "FROM User WHERE username = :name";
 			
-			Query query = session.createQuery(hql);//, User.class);
+			Query query = session.createQuery(hql);
 			
 			query.setParameter("name", username);
 			
@@ -50,6 +50,7 @@ public class UserDaoImpl implements UserDao {
 	public void saveUser(User user) {
 		Session session = sf.openSession();
 		Transaction transaction = session.beginTransaction();
+		System.out.println(user.getFullname());
 		session.save(user);
 		transaction.commit();
 		sf.close();
