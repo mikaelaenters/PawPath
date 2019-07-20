@@ -33,15 +33,16 @@ public class User {
 	@Column(name="fullname")
 	private String fullname;
 	
-	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.MERGE, mappedBy="user")
-	private Profile userProfile;
+//	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.MERGE)
+//	@JoinColumn(name"user_id")
+//	private Profile userProfile;
 
 	//Constructors;
 	public User() {
 		super();	
 	}
 	
-	public User(int userId, String username, String password, String userRole, String fullname, Profile userProfile) {
+	public User(int userId, String username, String password, String userRole, String fullname) {
 		super();
 		this.userId = userId;
 		this.username = username;
