@@ -21,7 +21,7 @@ public class Walk {
 	
 	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name="dog_id")
-	private Dog dog;
+	private Dogs dog;
 	
 	@Column(name="walk_date")
 	private String walkDate;
