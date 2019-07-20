@@ -24,6 +24,7 @@ public class UserDaoImpl implements UserDao {
 		//This User is the class/object -----NOT TABLE-------
 			String hql = "FROM User WHERE username = :name";
 			
+			@SuppressWarnings("rawtypes")
 			Query query = session.createQuery(hql);//, User.class);
 			
 			query.setParameter("name", username);
@@ -36,9 +37,11 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAllUsers() {
 		Session session = sf.openSession();
+		@SuppressWarnings("deprecation")
 		Criteria criteria = session.createCriteria(User.class);
 		List<User> allUsers = criteria.list();
 		sf.close();
