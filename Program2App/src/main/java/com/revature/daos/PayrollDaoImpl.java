@@ -7,10 +7,12 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 
 import com.revature.beans.Payroll;
 import com.revature.util.SessionFactoryUtil;
 
+@Component
 public class PayrollDaoImpl implements PayrollDao {
 	SessionFactory sf = SessionFactoryUtil.getSessionFactory();
 

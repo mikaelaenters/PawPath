@@ -15,7 +15,7 @@ import com.revature.beans.User;
 import com.revature.daos.PaymentDaoImpl;
 
 
-@RestController
+@RestController("/payment")
 @CrossOrigin(origins="*")
 public class PaymentController {
 	
@@ -28,20 +28,19 @@ public class PaymentController {
 		this.paymentDao = paymentDao;
 	}
 	
-    @GetMapping(value = "/payment{userId}")
+//    @GetMapping
+//	public Payments getPaymentById(@PathVariable int paymentId) {
+//		return paymentDao.makePayment(user, paymentId);
+//		
+//	}
 	
-	public User getUserById(@PathVariable int userId) {
-		return paymentDao.makePayment(user, userId);
-		
-	}
-	
-    @GetMapping(value = "/seePayments")
+    @GetMapping("/payment/seePayments")
 	public List<Payments> seeAllPayments(Payments payments) {
     	return paymentDao.seeAllPayments();
 		
 	}
     
-    @PostMapping(consumes = "application/json", value = "/submitPayment")
+    @PostMapping(consumes = "application/json")
 	public String buyInsurance(@RequestBody Payments payment) {
 		paymentDao.submitPayment(payment);
 		return "success";

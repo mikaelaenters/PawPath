@@ -5,6 +5,7 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Dogs;
+import com.revature.beans.Insurance;
 import com.revature.beans.Payments;
 import com.revature.beans.Payroll;
 import com.revature.beans.Profile;
@@ -39,6 +40,7 @@ public class SessionFactoryUtil {
 				.addAnnotatedClass(Payroll.class)
 				.addAnnotatedClass(Payments.class)
 				.addAnnotatedClass(Walk.class)
+				.addAnnotatedClass(Insurance.class)
 				.buildSessionFactory();
 	
 	}

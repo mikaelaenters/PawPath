@@ -39,6 +39,9 @@ public class User {
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.MERGE, mappedBy="user")
 	List<Dogs> dogs = new ArrayList<Dogs>();
 	
+	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.MERGE, mappedBy="user")
+	List<Payments> payments = new ArrayList<Payments>();
+	
 //	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.MERGE)
 //	@JoinColumn(name"user_id")
 //	private Profile userProfile;

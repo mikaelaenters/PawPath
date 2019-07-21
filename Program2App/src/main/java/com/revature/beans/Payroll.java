@@ -14,12 +14,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PAYROLL")
+@Table(name = "payroll")
 public class Payroll {
 
 	// PK
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="prid")
 	private int id;
 	
 	@Column(name="paydate")
@@ -27,12 +28,12 @@ public class Payroll {
 	
 	//FK user_id
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="contractor_id")
 	private User user;
 	
 	//FK wid
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="wid")
+    @JoinColumn(name="job")
 	private Walk walk;
 	
 	@Column(name="payrate")

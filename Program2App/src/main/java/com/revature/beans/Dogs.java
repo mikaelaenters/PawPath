@@ -20,8 +20,8 @@ import javax.persistence.Table;
 public class Dogs {
 	
 	@Id
-	@Column(name="dog_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="dog_id")
 	private int dog_id;
 	
 	

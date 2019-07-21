@@ -4,21 +4,25 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="insurance")
 public class Insurance {
 	
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="insurance_id")
 	private int insurance_id;
 	
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="user_id")
-	private int user_id;
+	private User user;
 	
 	@Column(name="opt_out")
 	private boolean opt_out;
@@ -34,11 +38,11 @@ public class Insurance {
 	public Insurance() {
 		
 	}
-	public Insurance(int insurance_id, int user_id, boolean opt_out, boolean liability, boolean comprehensive,
+	public Insurance(int insurance_id, User user, boolean opt_out, boolean liability, boolean comprehensive,
 			double price) {
 		super();
 		this.insurance_id = insurance_id;
-		this.user_id = user_id;
+		this.user = user;
 		this.opt_out = opt_out;
 		this.liability = liability;
 		this.comprehensive = comprehensive;
@@ -50,11 +54,13 @@ public class Insurance {
 	public synchronized void setInsurance_id(int insurance_id) {
 		this.insurance_id = insurance_id;
 	}
-	public synchronized int getUser_id() {
-		return user_id;
+	
+	
+	public User getUser() {
+		return user;
 	}
-	public synchronized void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public synchronized boolean isOpt_out() {
 		return opt_out;

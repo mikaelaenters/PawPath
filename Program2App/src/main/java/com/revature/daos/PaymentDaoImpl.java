@@ -13,20 +13,20 @@ import com.revature.beans.Payments;
 import com.revature.beans.User;
 import com.revature.util.SessionFactoryUtil;
 
-@Component
+
 public class PaymentDaoImpl implements PaymentDao {
 	private static SessionFactory sf = SessionFactoryUtil.getSessionFactory();
 	
 
-	@Override
-	public User makePayment(User user, int id) {
-		Session sess = sf.openSession();
-		user = sess.get(User.class, id);
-		sess.close();
-		
-		return user;
-
-	}
+//	@Override
+//	public User makePayment(User user, int id) {
+//		Session sess = sf.openSession();
+//		user = sess.get(User.class, id);
+//		sess.close();
+//		
+//		return user;
+//
+//	}
 
 	@Override
 	public List<Payments> seeAllPayments() {
