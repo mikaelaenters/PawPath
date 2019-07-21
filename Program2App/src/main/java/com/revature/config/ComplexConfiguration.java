@@ -14,4 +14,6 @@ public class ComplexConfiguration {
 	public User user() {
 		return new User();
 	}
+	
+	
 }

@@ -40,3 +40,5 @@ public class ProfileController {
 		profileService.registerProfile(profile);
 		return "success";
 	}
+	
+}

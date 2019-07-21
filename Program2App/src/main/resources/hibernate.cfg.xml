@@ -8,6 +8,7 @@
 		<property name="hibernate.connection.pool_size">5</property>
 		<mapping class="com.revature.beans.User" />	
 		<mapping class="com.revature.beans.Dogs" />	
-		<mapping class="com.revature.beans.Payments" />	
+		<mapping class="com.revature.beans.Payments" />
+		<mapping class="com.revature.beans.Profile" />	
 	</session-factory>
 </hibernate-configuration>
