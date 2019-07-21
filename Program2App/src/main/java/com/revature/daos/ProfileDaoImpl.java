@@ -2,11 +2,15 @@ package com.revature.daos;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+
 import org.hibernate.query.Query;
+
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.Profile;
@@ -20,7 +24,6 @@ public class ProfileDaoImpl implements ProfileDao {
 	public ProfileDaoImpl() {
 		// TODO Auto-generated constructor stub
 	}
-
 
 	@Override
 	public Profile getProfileByUserId(int userId) {
@@ -60,7 +63,5 @@ public class ProfileDaoImpl implements ProfileDao {
 		session.save(profile);
 		transaction.commit();
 		sf.close();
-		
 	}
-
 }

@@ -27,12 +27,12 @@ public class Payroll {
 	
 	//FK user_id
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="user_id")
+  @JoinColumn(name="user_id")
 	private User user;
 	
 	//FK wid
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="wid")
+  @JoinColumn(name="wid")
 	private Walk walk;
 	
 	@Column(name="payrate")
@@ -91,7 +91,4 @@ public class Payroll {
 		this.walk = walk;
 		this.payrate = payrate;
 	}
-	
-	
-	
 }
