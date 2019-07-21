@@ -22,8 +22,6 @@ public class WalkDaoImpl implements WalkDao {
 		sf.close();
 			
 		return allWalks;
-		
-		
 	}
 
 	@Override
@@ -38,6 +36,7 @@ public class WalkDaoImpl implements WalkDao {
 	@Override
 	public Walk getWalkById(int id) {
 		Session session = sf.openSession();
+		Walk walk = session.get(entityType, id)
 		Walk walk = session.get(Walk.class, id);
 		session.close();
 		return walk;
@@ -54,7 +53,4 @@ public class WalkDaoImpl implements WalkDao {
 		// TODO Auto-generated method stub
 		
 	}
-
-
-
 }
