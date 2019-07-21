@@ -19,8 +19,10 @@ import com.revature.service.PayrollServiceImpl;
 public class PayrollController {
 	private PayrollServiceImpl payrollService;
 	
+	
+	//Set payrollservice
 	@Autowired
-	public void setUserService(PayrollServiceImpl payrollService) {
+	public void setPayrollService(PayrollServiceImpl payrollService) {
 		this.payrollService = payrollService;
 	}
 	@GetMapping
@@ -36,4 +38,6 @@ public class PayrollController {
 		payrollService.createPaycheck(paycheck);
 		return "success";
 	}
+	
+	
 }
