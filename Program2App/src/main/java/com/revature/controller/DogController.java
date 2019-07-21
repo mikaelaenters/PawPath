@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Dogs;
-import com.revature.daos.DogDao;
+import com.revature.daos.DogDaoImpl;
 
-@RestController
+@RestController("/dogs")
 @CrossOrigin(origins="*")
 public class DogController {
 	
-	DogDao dogDao;
+	DogDaoImpl dogDao;
 	
 	@Autowired
-	public void setDogDao(DogDao dogDao) {
+	public void setDogDao(DogDaoImpl dogDao) {
 		this.dogDao = dogDao;
 	}
 	
-	@PostMapping(consumes = "application/json", value = "/addDog")
-	public String buyInsurance(@RequestBody Dogs dog) {
+	@PostMapping(consumes = "application/json")            //, value = "/addDog")
+	public String addADog(@RequestBody Dogs dog) {
 		dogDao.addDog(dog);
 		return "success";
 	}
 	
-    @GetMapping(value = "/deleteDog{dogId}")
+    @GetMapping(value = "/dogs/deleteDog{dogId}")
 	public void deleteDog(int dogId) {
 		dogDao.deleteDog(dogId);
 		
 	}
     
-    @GetMapping(value = "/dogs")
+    @GetMapping
 	public List<Dogs> seeAllPayments(Dogs dog) {
     	return dogDao.getAllDogs();
 		

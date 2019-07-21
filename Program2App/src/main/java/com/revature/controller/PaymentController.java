@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Payments;
 import com.revature.beans.User;
-import com.revature.daos.PaymentDao;
+import com.revature.daos.PaymentDaoImpl;
 
 
 @RestController
 @CrossOrigin(origins="*")
 public class PaymentController {
 	
-	PaymentDao paymentDao;
+	PaymentDaoImpl paymentDao;
 	User user = null;
 	
 	@Autowired
 	
-	public void setPaymentDao(PaymentDao paymentDao) {
+	public void setPaymentDao(PaymentDaoImpl paymentDao) {
 		this.paymentDao = paymentDao;
 	}
 	
