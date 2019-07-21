@@ -1,4 +1,8 @@
 package com.revature.beans;
+
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,9 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name="dogs")
@@ -24,8 +27,7 @@ public class Dogs {
 	
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name="owner_id")
-	private int owner_id;
-	
+	private User user;
 	
 	@Column(name="fullname")
 	private String fullname;
@@ -41,6 +43,9 @@ public class Dogs {
 	
 	@Column(name="dog_age")
 	private double dog_age;
+	
+	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.LAZY, mappedBy="dog")
+	private Set<Walk> walks = new HashSet<Walk>();
 	
 	public Dogs() {
 		super();
@@ -97,15 +102,15 @@ public class Dogs {
 	}
 
 	public Dogs(int dog_id, int owner_id, String fullname, String breed, String dog_size, String gender,
-			double dog_age) {
+			double dog_age, User user) {
 		super();
 		this.dog_id = dog_id;
-		this.owner_id = owner_id;
 		this.fullname = fullname;
 		this.breed = breed;
 		this.dog_size = dog_size;
 		this.gender = gender;
 		this.dog_age = dog_age;
+		this.user = user;
 	}
 
 

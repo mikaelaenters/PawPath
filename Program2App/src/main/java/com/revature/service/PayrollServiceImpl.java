@@ -11,7 +11,7 @@ import com.revature.daos.PayrollDaoImpl;
 
 @Component
 public class PayrollServiceImpl implements PayrollService {
-	private PayrollDao payrollDao;
+	private PayrollDaoImpl payrollDao;
 	
 	@Autowired
 	public void setPayrollDao(PayrollDaoImpl payrollDao) {

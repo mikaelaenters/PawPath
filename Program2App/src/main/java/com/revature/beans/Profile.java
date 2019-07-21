@@ -47,8 +47,6 @@ public class Profile {
 	@Column(name="bio")
 	private String bio;
 	
-	@Column(name="user_id")
-	private String userId;
 
 	public Profile() {
 		// TODO Auto-generated constructor stub
@@ -56,7 +54,7 @@ public class Profile {
 
 
 	public Profile(int profileId, String phoneNumber, String creditCard, String streetAddress, User user, String city,
-			String state, String zipCode, String bio, String userId) {
+			String state, String zipCode, String bio) {
 		super();
 		this.profileId = profileId;
 		this.phoneNumber = phoneNumber;
@@ -67,7 +65,6 @@ public class Profile {
 		this.state = state;
 		this.zipCode = zipCode;
 		this.bio = bio;
-		this.userId = userId;
 	}
 
 
@@ -144,21 +141,13 @@ public class Profile {
 	}
 
 
-	public String getUserId() {
-		return userId;
-	}
-
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
 
 
 	@Override
 	public String toString() {
 		return "Profile [profileId=" + profileId + ", phoneNumber=" + phoneNumber + ", creditCard=" + creditCard
 				+ ", streetAddress=" + streetAddress + ", user=" + user + ", city=" + city + ", state=" + state
-				+ ", zipCode=" + zipCode + ", bio=" + bio + ", userId=" + userId + "]";
+				+ ", zipCode=" + zipCode + ", bio=" + bio + "]";
 	}
 
 }

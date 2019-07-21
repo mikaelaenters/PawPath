@@ -38,7 +38,9 @@ public class WalkDaoImpl implements WalkDao {
 	@Override
 	public Walk getWalkById(int id) {
 		Session session = sf.openSession();
-		Walk walk = session.get(entityType, id)
+		Walk walk = session.get(Walk.class, id);
+		session.close();
+		return walk;
 	}
 
 	@Override
