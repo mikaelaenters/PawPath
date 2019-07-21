@@ -1,4 +1,3 @@
-    
 package com.revature.controller;
 
 import java.util.List;
@@ -40,3 +39,4 @@ public class ProfileController {
 		profileService.registerProfile(profile);
 		return "success";
 	}
+}

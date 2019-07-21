@@ -20,7 +20,7 @@ public class PayrollController {
 	private PayrollServiceImpl payrollService;
 	
 	@Autowired
-	public void setUserService(PayrollServiceImpl payrollService) {
+	public void setPayrollService(PayrollServiceImpl payrollService) {
 		this.payrollService = payrollService;
 	}
 	@GetMapping

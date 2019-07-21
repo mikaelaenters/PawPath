@@ -30,6 +30,5 @@ public class Payroll {
 	private int job;
 	
 	@Column(name="payrate")
-	private int payrate;
-	
+	private int payrate;	
 }

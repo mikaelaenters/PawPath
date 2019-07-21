@@ -35,6 +35,4 @@ public class Walk {
 	@Column(name="minutes")
 	private double minutes;
 	
-	
-	
 }

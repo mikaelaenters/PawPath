@@ -2,9 +2,13 @@ package com.revature.daos;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
 
 import com.revature.beans.Profile;
 import com.revature.util.SessionFactoryUtil;
