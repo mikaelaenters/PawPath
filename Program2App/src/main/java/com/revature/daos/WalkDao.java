@@ -1,5 +1,6 @@
 package com.revature.daos;
 
+public interface WalkDao {
 import java.util.List;
 
 import com.revature.beans.Walk;
@@ -11,4 +12,5 @@ public interface WalkDao {
 	public Walk getWalkById(int id);
 	public void updateWalk(Walk walk);
 	public void deleteWalk(Walk walk);
+
 }

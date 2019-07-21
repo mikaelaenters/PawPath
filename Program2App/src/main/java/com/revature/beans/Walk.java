@@ -2,6 +2,9 @@ package com.revature.beans;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -12,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="walks")
 public class Walk {
-
+  
 	@Column(name="wid")
 	private int walkId;
 	
@@ -21,6 +24,7 @@ public class Walk {
 	private User user;
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+
 	@JoinColumn(name="dog_id")
 	private Dogs dog;
 	
@@ -35,7 +39,6 @@ public class Walk {
 	
 	@Column(name="minutes")
 	private double minutes;
-
 	public int getWalkId() {
 		return walkId;
 	}
@@ -108,7 +111,4 @@ public class Walk {
 		this.locationZipcode = locationZipcode;
 		this.minutes = minutes;
 	}
-	
-	
-	
 }

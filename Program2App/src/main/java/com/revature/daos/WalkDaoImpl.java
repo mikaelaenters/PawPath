@@ -10,6 +10,10 @@ import org.hibernate.Transaction;
 import com.revature.beans.Walk;
 import com.revature.util.SessionFactoryUtil;
 
+public class WalkDaoImpl {
+	
+	SessionFactory sf = SessionFactoryUtil.getSessionFactory();
+  
 public class WalkDaoImpl implements WalkDao {
 
 	SessionFactory sf = SessionFactoryUtil.getSessionFactory();
@@ -23,6 +27,7 @@ public class WalkDaoImpl implements WalkDao {
 			
 		return allWalks;
 	}
+}
 
 	@Override
 	public void saveWalk(Walk walk) {
@@ -31,6 +36,12 @@ public class WalkDaoImpl implements WalkDao {
 		session.save(walk);
 		transaction.commit();
 		sf.close();
+	}
+
+	public Walk getWalkById(int id) {
+		Session session = sf.openSession();
+		Walk walk = session.get(entityType, id);
+		session.close();
 	}
 
 	@Override
@@ -47,7 +58,7 @@ public class WalkDaoImpl implements WalkDao {
 		// TODO Auto-generated method stub
 		
 	}
-
+  
 	@Override
 	public void deleteWalk(Walk walk) {
 		// TODO Auto-generated method stub
