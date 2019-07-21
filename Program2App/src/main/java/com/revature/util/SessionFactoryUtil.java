@@ -1,12 +1,15 @@
 package com.revature.util;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
 import org.springframework.stereotype.Component;
 
+import com.revature.beans.Dogs;
+import com.revature.beans.Payments;
+import com.revature.beans.Payroll;
+import com.revature.beans.Profile;
 import com.revature.beans.User;
+import com.revature.beans.Walk;
 
 @Component
 public class SessionFactoryUtil {
@@ -31,7 +34,11 @@ public class SessionFactoryUtil {
 //		sf = configuration.buildSessionFactory(serviceRegistry);
 		
 		sf = configuration.configure("hibernate.cfg.xml").addAnnotatedClass(User.class)
-				
+				.addAnnotatedClass(Profile.class)
+				.addAnnotatedClass(Dogs.class)
+				.addAnnotatedClass(Payroll.class)
+				.addAnnotatedClass(Payments.class)
+				.addAnnotatedClass(Walk.class)
 				.buildSessionFactory();
 	
 	}

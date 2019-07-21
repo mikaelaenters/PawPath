@@ -46,6 +46,7 @@ public class Profile {
 
 	@Column(name="bio")
 	private String bio;
+	
 
 	public Profile() {
 		// TODO Auto-generated constructor stub
@@ -139,10 +140,14 @@ public class Profile {
 		this.bio = bio;
 	}
 
+
+
+
 	@Override
 	public String toString() {
 		return "Profile [profileId=" + profileId + ", phoneNumber=" + phoneNumber + ", creditCard=" + creditCard
 				+ ", streetAddress=" + streetAddress + ", user=" + user + ", city=" + city + ", state=" + state
 				+ ", zipCode=" + zipCode + ", bio=" + bio + "]";
 	}
+
 }

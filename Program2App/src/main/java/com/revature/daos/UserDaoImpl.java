@@ -2,17 +2,13 @@ package com.revature.daos;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
-import org.springframework.stereotype.Component;
 
 import com.revature.beans.User;
 import com.revature.util.SessionFactoryUtil;
 
-@Component
 public class UserDaoImpl implements UserDao {
 	
 	SessionFactory sf = SessionFactoryUtil.getSessionFactory();
@@ -21,15 +17,13 @@ public class UserDaoImpl implements UserDao {
 	public User getUser(String username) {
 		
 		Session session = sf.openSession();
-		//This User is the class/object -----NOT TABLE-------
-			String hql = "FROM User WHERE username = :name";
+			String hql = "FROM Users as u WHERE u.username = :name";
 			
-			@SuppressWarnings("rawtypes")
-			Query query = session.createQuery(hql);//, User.class);
+			Query query = session.createQuery(hql);
 			
-			query.setParameter("name", username);
+			query.setString("name", username);
 			
-			User user = (User) query.getSingleResult();
+			User user = (User) query.uniqueResult();
 		
 		session.close();
 		
@@ -37,37 +31,21 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAllUsers() {
-		Session session = sf.openSession();
-		@SuppressWarnings("deprecation")
-		Criteria criteria = session.createCriteria(User.class);
-		List<User> allUsers = criteria.list();
-		sf.close();
-		
-		return allUsers;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public void saveUser(User user) {
-		Session session = sf.openSession();
-		Transaction transaction = session.beginTransaction();
-		session.save(user);
-		transaction.commit();
-		sf.close();
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public User getUserById(int id) {
-		Session session = sf.openSession();
-	
-		User user = session.get(User.class, id);
-	
-		sf.close();
-		
-		return user;
+		// TODO Auto-generated method stub
+		return null;
 	}
-
 }
