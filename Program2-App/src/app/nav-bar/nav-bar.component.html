@@ -4,7 +4,7 @@
     <a routerLink="/search"><button mat-button>Search For Walkers</button></a>
       <!-- This fills the remaining space of the current row -->
       <span class="example-fill-remaining-space"></span>
-      <a routerLink="/dashboard"><button mat-button>Dashboard</button></a>
+      <a routerLink="/dashboard" *ngIf [currentUser] != null><button mat-button>Dashboard</button></a>
       <a routerLink="/customerRegistration"><button mat-button>Sign Up</button></a>
       <a routerLink="/login"><button mat-button>Login</button></a>
     </mat-toolbar> 
