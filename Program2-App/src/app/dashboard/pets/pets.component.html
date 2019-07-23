@@ -1,0 +1,63 @@
+<div>
+        <mat-card class="card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>MY PETS</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                    <div class="flex-container">
+                        <div class="row">
+                            <div class="col-xs-6" id="dogContainer" *ngFor="let dog of dogs">
+                                <h4>{{dog.name | uppercase}}</h4>
+                                <hr>
+                                <h4>{{dog.breed}}</h4>
+                                <h4>{{dog.size}}</h4>
+                                <h4>{{dog.gender}}</h4>
+                                <h4>{{dog.age}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </mat-card-content>
+                    <div class="container" id="editProfileContainer" *ngIf="showAdd">
+                            <div class="col-12" id="editProfile">
+                                    <form>
+                                        <h2>Edit Profile</h2>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="editName">Full Name</label>
+                                                    <input [(ngModel)]="fullName" type="text" class="form-control" id="editName">
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="address">Address</label>
+                                                    <input [(ngModel)]="streetAddress" type="text"  class="form-control" id="street">
+                                                </div>
+                                            </div>
+                            
+                                        <div class="form-row">
+                            
+                                            <div class="form-group col-md-12">
+                                                    <input [(ngModel)]="city" type="text"  class="form-control" id="city" placeholder="City">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                    <input [(ngModel)]="state" type="text"  class="form-control" id="state" placeholder="State">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                                <input [(ngModel)]="zipCode" type="text"  class="form-control" id="zipCode" placeholder="Zip Code">
+                                            </div>
+                                        </div>
+                                        </form>
+                                                <button mat-raised-button color="basic">Submit</button>
+                                            <br/><br/><br/>
+                                            </div>
+                                        </div>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="toggleShowAdd()">Add Pet</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>

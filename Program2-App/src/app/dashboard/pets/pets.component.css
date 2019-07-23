@@ -1,0 +1,13 @@
+#dogContainer {
+    background-color: rgb(226, 213, 213);
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.container-fluid {
+    padding-top: 50px;
+}
