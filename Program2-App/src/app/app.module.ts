@@ -24,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PetsComponent } from './dashboard/pets/pets.component';
 import { WalksComponent } from './dashboard/walks/walks.component';
 import { SearchForWalkersComponent } from './search-for-walkers/search-for-walkers.component';
-
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { from } from 'rxjs';
 
 
 
@@ -56,9 +57,10 @@ import { SearchForWalkersComponent } from './search-for-walkers/search-for-walke
     MatToolbarModule,
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
