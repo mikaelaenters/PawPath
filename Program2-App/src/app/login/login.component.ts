@@ -10,19 +10,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  user: User = new User();
-
+  user: User;
   username = "";
   password = "";
+ 
 
-  constructor(private userservice: UserService, private router: Router) { }
-
+  constructor(private userservice: UserService, private router: Router) { 
+  }
   loginUser() {
-    this.userservice.loginUser(this.username, this.password).subscribe((user) => {
-      this.user = user;
+    this.userservice.loginUser(this.username, this.password).subscribe( () => {
+      this.user = this.userservice.getCurrentUser();
+      console.log(this.user);
       if (this.user !== null) {
-        this.userservice.setCurrentUser(user);
         if (this.user.userRole === 'customer') {
           this.router.navigate(['/dashboard']);
         }
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log(this.user);
   }
 
 }
