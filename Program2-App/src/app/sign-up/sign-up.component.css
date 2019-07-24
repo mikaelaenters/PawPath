@@ -1,0 +1,35 @@
+.container{
+  height: 600px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+.login-image{
+ background-color: white;
+ height: 200px;
+ margin-top: 20px;
+ padding-right: 10px;
+ margin-right: 1px;
+ margin-left: 1px;
+ border-radius: 3px;
+ padding-top: 5px;
+}
+.login-title{
+ background-color: white;
+ height: 115px;
+ padding-right: 10px;
+ margin-right: 1px;
+ margin-left: 1px;
+ margin-top: 20px;
+ border-radius: 3px;
+ padding-top: 30px;
+}
+
+#login-btn{
+ width: 200px;
+ height: 50px;
+ font-size: 20px;
+}
+.form-group input{
+ height: 50px;
+ font-size: 15px;
+}
