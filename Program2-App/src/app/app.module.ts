@@ -26,6 +26,7 @@ import { WalksComponent } from './dashboard/walks/walks.component';
 import { SearchForWalkersComponent } from './search-for-walkers/search-for-walkers.component';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { from } from 'rxjs';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 
@@ -41,7 +42,8 @@ import { from } from 'rxjs';
     DashboardComponent,
     PetsComponent,
     WalksComponent,
-    SearchForWalkersComponent
+    SearchForWalkersComponent,
+    SignUpComponent
   ],
   imports: [
     MatSidenavModule,

@@ -4,13 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchForWalkersComponent } from './search-for-walkers/search-for-walkers.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'search', component: SearchForWalkersComponent }
+  { path: 'search', component: SearchForWalkersComponent },
+  { path: 'signup', component: SignUpComponent }
   ];
 
 

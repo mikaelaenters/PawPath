@@ -6,7 +6,5 @@ export class User {
     userRole: string;
     fullname: string;
 
-    //constructor(userId: number, username: string, )
-
 
 }
