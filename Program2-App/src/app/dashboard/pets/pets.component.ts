@@ -1,30 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DogService } from 'src/app/services/dogservice';
+import { Dog } from 'src/app/models/dog';
+import { UserService } from 'src/app/services/userservice';
 
 @Component({
   selector: 'app-pets',
   templateUrl: './pets.component.html',
   styleUrls: ['./pets.component.css']
 })
-export class PetsComponent {
+export class PetsComponent implements OnInit {
   showAdd = false;
-  dogs = [
-    {
-      name: 'Rowdy', 
-      breed: 'German Shepard', 
-      size: '75lbs', 
-      gender: 'M'
-    },
-    {
-      name: 'Penny', 
-      breed: 'Poodle', 
-      size: '55lbs', 
-      gender: 'F'
-    }
-  ];
-  
+  dogs: Dog[] = [];
   toggleShowAdd() {
     this.showAdd = !this.showAdd;
   }
-  constructor() { }
+  constructor(private dogService: DogService, private userService: UserService) { }
 
+  ngOnInit() {
+    this.dogService.getUserDogs(this.userService.getCurrentUser().userId).subscribe((data) => {
+      this.dogs = data;
+    });
+  }
 }

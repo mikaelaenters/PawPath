@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   loginUser() {
     this.userservice.loginUser(this.username, this.password).subscribe((user) => {
       this.user = user;
-      if (this.user !== null){
+      if (this.user !== null) {
         this.userservice.setCurrentUser(user);
         if (this.user.userRole === 'customer') {
           this.router.navigate(['/dashboard']);

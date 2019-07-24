@@ -8,12 +8,12 @@
                     <div class="flex-container">
                         <div class="row">
                             <div class="col-xs-6" id="dogContainer" *ngFor="let dog of dogs">
-                                <h4>{{dog.name | uppercase}}</h4>
+                                <h4>{{dog.fullname | uppercase}}</h4>
                                 <hr>
                                 <h4>{{dog.breed}}</h4>
-                                <h4>{{dog.size}}</h4>
+                                <h4>{{dog.dogSize}}</h4>
                                 <h4>{{dog.gender}}</h4>
-                                <h4>{{dog.age}}</h4>
+                                <h4>{{dog.dogAge}}</h4>
                             </div>
                         </div>
                     </div>

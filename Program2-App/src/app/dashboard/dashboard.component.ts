@@ -1,32 +1,25 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/userservice';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   showEdit = false;
-  dogs = [
-  {
-    name: 'Rowdy', 
-    breed: 'German Shepard', 
-    size: '75lbs', 
-    gender: 'M'
-  },
-  {
-    name: 'Penny', 
-    breed: 'Poodle', 
-    size: '55lbs', 
-    gender: 'F'
-  }
-];
+  currentUser: User;
+  fullname = "";
+
+constructor(private userService: UserService) { }
 
 
-constructor() { }
+ngOnInit() {
 
-
+  this.currentUser = this.userService.getCurrentUser();
+  this.fullname = this.currentUser.fullname;
+}
 
 
 toggleShowEdit() {
