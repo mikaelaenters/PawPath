@@ -18,41 +18,44 @@
                         </div>
                     </div>
                     </mat-card-content>
-                    <div class="container" id="editProfileContainer" *ngIf="showAdd">
-                            <div class="col-12" id="editProfile">
+                    <div class="container" id="doggyContainer" *ngIf="showAdd">
+                            <div class="col-12" id="addMyDog">
                                     <form>
-                                        <h2>Edit Profile</h2>
+                                        <h2>Add Your Dog</h2>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="editName">Full Name</label>
-                                                    <input [(ngModel)]="fullName" type="text" class="form-control" id="editName">
+                                                    <input [(ngModel)]="newDog.fullname" type="text" class="form-control" name="editName">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <label for="address">Address</label>
-                                                    <input [(ngModel)]="streetAddress" type="text"  class="form-control" id="street">
+                                                    <label for="breed">Breed</label>
+                                                    <input [(ngModel)]="newDog.breed" type="text"  class="form-control" name="breed">
                                                 </div>
                                             </div>
                             
                                         <div class="form-row">
                             
                                             <div class="form-group col-md-12">
-                                                    <input [(ngModel)]="city" type="text"  class="form-control" id="city" placeholder="City">
+                                                    <label for="size">Dog Size</label>
+                                                    <input [(ngModel)]="newDog.dogSize" type="text" class="form-control" name="dogSize" placeholder="Small/Medium/Large/Giant">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                    <input [(ngModel)]="state" type="text"  class="form-control" id="state" placeholder="State">
+                                                    <label for="gender">Gender</label>
+                                                    <input [(ngModel)]="newDog.gender" type="text"  class="form-control" name="dogGender" placeholder="Female/Male">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                <input [(ngModel)]="zipCode" type="text"  class="form-control" id="zipCode" placeholder="Zip Code">
+                                                <label for="age">Age</label>
+                                                <input [(ngModel)]="newDog.dogAge" type="text"  class="form-control" name="dogAge" placeholder="My Age!">
                                             </div>
                                         </div>
                                         </form>
-                                                <button mat-raised-button color="basic">Submit</button>
+                                                <button mat-raised-button color="basic" (click)="addDog()">Submit</button>
                                             <br/><br/><br/>
                                             </div>
                                         </div>

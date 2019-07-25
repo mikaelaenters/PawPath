@@ -10,9 +10,11 @@ import { UserController } from 'src/app/models/usercontroller';
 providedIn: 'root'
 })
 export class UserService {
-        private readonly url: string = 'http://localhost:8080/PawPath/user';
+        private readonly url: string = 'http://localhost:8080/PawPath/pawpath/user';
         private currentUserAsASubject: BehaviorSubject<UserController>;
         currentUser: Observable<UserController>;
+        private loggedInUser: User;
+
     constructor(private http: HttpClient) {
         this.currentUserAsASubject = new BehaviorSubject<UserController>(null);
         this.currentUser = this.currentUserAsASubject.asObservable();
@@ -22,6 +24,7 @@ export class UserService {
         return this.http.get<User>(this.url + '/' + username + '/' + password, {observe: 'response'}).pipe(
             map(response => {
             let responseObject = response.body as User;
+            this.loggedInUser = responseObject;
             let newUser = new UserController(
                                     responseObject.userId,
                                     responseObject.username,
@@ -39,5 +42,9 @@ export class UserService {
     
     public getCurrentUser(): UserController {
         return this.currentUserAsASubject.value;
+    }
+
+    public getLoggedInUser(): User {
+        return this.loggedInUser;
     }
 }

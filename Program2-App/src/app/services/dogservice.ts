@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 })
 export class DogService {
 
-    private readonly url: string = 'http://localhost:8080/PawPath/dog';
+    private readonly url: string = 'http://localhost:8080/PawPath/pawpath/dog';
 
     currentUser: User;
 
@@ -18,5 +18,11 @@ export class DogService {
     public getUserDogs(id: number) {
 
         return this.http.get<Dog[]>(this.url + '/' + id);
+    }
+
+    public addADog(newDog: Dog) {
+        console.log("inside post");
+        return this.http.post(this.url, newDog);
+
     }
 }

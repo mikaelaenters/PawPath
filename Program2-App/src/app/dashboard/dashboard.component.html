@@ -11,9 +11,10 @@
                 <mat-card-content>
                   <p>
                     Name: {{fullname}} <br/>
-                    Phone Number: <br/>
-                    Address: <br/>
-                    Bio:
+                    Phone Number: {{userProfile.phoneNumber}} <br/>
+                    Address: {{userProfile.address}} <br/>
+                        {{userProfile.city}}, {{userProfile.state}}, {{userProfile.zipCode}} <br/>
+                    Bio: {{userProfile.bio}}
                   </p>
                   
                 </mat-card-content>
