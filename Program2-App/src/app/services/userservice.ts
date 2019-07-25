@@ -32,6 +32,11 @@ export class UserService {
                             })
             )
     }
+
+    public registerUser (newUser: User) {
+        return this.http.post(this.url, newUser);
+    }
+    
     public getCurrentUser(): UserController {
         return this.currentUserAsASubject.value;
     }

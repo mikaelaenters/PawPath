@@ -5,27 +5,27 @@
             <h1 class="display-4 font-weight-bold text-primary">Sign-Up Page</h1>
       </div><br>
     
-      <form>  
+      <!-- <form>   -->
         <div class="form-group">
           <label for="exampleInputEmail1">Username</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+          <input type="email"class="form-control" [(ngModel)]="newUser.username"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
         </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input type="password" class="form-control" [(ngModel)]="newUser.password" id="exampleInputPassword1" placeholder="Password">
       </div>
       <div class="form-group">
           <label for="exampleInputEmail1">Fullname</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Fullname">
+          <input type="email" class="form-control" [(ngModel)]="newUser.fullname" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Fullname">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">User Role</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Fullname">
+            <input type="email" class="form-control" [(ngModel)]="newUser.userRole" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User Role">
           </div>
           <div class="row justify-content-center">
-              <button type="submit" class="btn-lg btn-light text-primary font-weight-bold" id="login-btn">Register</button>
+              <button type="button" (click)="onSubmit()" class="btn-lg btn-light text-primary font-weight-bold" id="login-btn">Register</button>
       </div>
-    </form>
+    <!-- </form> -->
     </div>
   </div>
 </div>
