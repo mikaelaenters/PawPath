@@ -1,0 +1,10 @@
+<div id="search-component">
+    <h4>Profile Search</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <div>
+      <div *ngFor="let profile of profiles | async"
+           (click)="gotoDetail(hero)" class="search-result" >
+        {{profile.name}}
+      </div>
+    </div>
+  </div>
