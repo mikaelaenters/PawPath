@@ -25,19 +25,19 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="editName">Full Name</label>
-                                                <input [(ngModel)]="fullName" type="text" class="form-control" id="editName">
+                                                <input [(ngModel)]="fullname" type="text" class="form-control" id="editName">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                                    <label for="editName">Full Name</label>
-                                                    <input [(ngModel)]="fullName" type="text" class="form-control" id="editName">
+                                                    <label for="editName">Phone Number</label>
+                                                    <input [(ngModel)]="phoneNumber" type="text" class="form-control" id="editName">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
                                                 <label for="address">Address</label>
-                                                <input [(ngModel)]="streetAddress" type="text"  class="form-control" id="street">
+                                                <input [(ngModel)]="address" type="text"  class="form-control" id="street">
                                             </div>
                                         </div>
                         
@@ -63,7 +63,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                            <button mat-raised-button color="basic">Submit</button>
+                                            <button mat-raised-button color="basic" (click)="updateProfile()">Submit</button>
                                         <br/><br/><br/>
                                         </div>
                                     </div>

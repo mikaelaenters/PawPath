@@ -20,5 +20,9 @@ export class ProfileService {
 
         return this.http.get<Profile>(this.url + '/' + id);
     }
-    
+
+    public getAllContractors() {
+        return this.http.get<User[]>(this.url);
+    }
+
 }

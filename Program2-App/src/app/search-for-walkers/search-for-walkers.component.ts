@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-export interface WalkerProfile {
-  name: string;
-  bio: string;
-}
+import { Profile } from 'src/app/models/profile';
+import { ProfileService } from 'src/app/services/profileservice';
+import { User } from '../models/user';
 
 
 
@@ -13,15 +12,14 @@ export interface WalkerProfile {
 })
 export class SearchForWalkersComponent implements OnInit {
 
-   WALKER_PROFILES: WalkerProfile[] = [
-    {name: 'Mikaela Enters', bio: 'I love dogs so much'},
-    {name: 'Marin Enters', bio: 'I do not love dogs as much'},
-    {name: 'Austin Kelcher', bio: 'Video games are better than dogs'}
-    ];
+contractors: User[];
 
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit() {
+    this.profileService.getAllContractors().subscribe((data) => {
+      this.contractors = data;
+    });
   }
 
 }

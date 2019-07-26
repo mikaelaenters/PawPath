@@ -40,4 +40,7 @@ toggleShowEdit() {
   this.showEdit = !this.showEdit;
 }
 
+updateProfile() {
+  
+}
 }
